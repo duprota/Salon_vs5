@@ -1,0 +1,28 @@
+<!-- Eduardo -->
+
+<h1> teste</h1>
+
+<h2>Add a service:</h2>
+
+<%= form_for :service, url: salon_services_path do |f| %>
+
+
+  <p>
+    <%= f.label :Category %><br />
+    <%= f.text_field :category_id %>
+    </p>
+
+  <p>
+    <%= f.label :Service %><br />
+    <%= f.text_area :service_name %>
+  </p>
+
+  <p>
+    <%= f.label :Description %><br />
+    <%= f.text_area :service_description %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

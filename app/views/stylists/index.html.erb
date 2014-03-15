@@ -1,0 +1,24 @@
+
+<h1>Listing Salons</h1>
+
+<%= link_to "List of Stylist in your Salon", new_salon_stylist_path(@salon.id)   %> 
+
+ <!-- <table>
+  <tr>
+    <th></th>
+    <th>Text</th>
+    <th></th>
+    <th></th>
+  </tr>
+ -->
+<% @stylist.each do |stylist| %>
+  <tr>
+    <td><%= stylist.first_name %><%= stylist.last_name %></td>
+    <td><%= link_to 'Show', stylist_path(stylist) %></td>
+    <td><%= link_to 'Edit', edit_stylist_path(stylist) %></td>
+        <td><%= link_to 'Destroy', stylist_path(stylist),
+                    method: :destroy, data: { confirm: 'Are you sure?'}%></td>
+  </tr>
+<% end %>
+</table>
+

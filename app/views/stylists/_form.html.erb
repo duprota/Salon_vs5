@@ -1,0 +1,50 @@
+<%= form_for @salon_stylists do |f| %>
+  <% if @stylist.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@stylist.errors.count, "error") %> prohibited
+      this salon from being saved:</h2>
+    <ul>
+    <% @stylist.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <h1> Create / Edit Stylist Information </h1>
+  <p> 
+    <%= f.label :"User ID" %><br>
+    <%= session[:login] %>
+    </p>
+  <p>
+    <%= f.label :" First name" %><br>
+    <%= f.text_field :first_name %>
+    </p>
+
+<p>
+    <%= f.label :"Last name" %><br>
+    <%= f.text_field :last_name %>
+</p>
+
+  <p>
+    <%= f.label :"Date of Birth" %><br>
+    <%= f.text_field :date_of_birth %>
+</p>
+
+  <p>
+    <%= f.label :"Gender" %><br>
+    <%= f.text_area :sex %>
+  </p>
+
+  <p>
+    <%= f.label :"Image URL" %><br>
+    <%= f.number_field :image_url %>
+  </p>
+  <p>
+    <%= f.label :"email" %><br>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.submit :"update" %>
+  </p>
+<% end %>
+

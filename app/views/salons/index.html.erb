@@ -1,0 +1,29 @@
+<!-- Eduardo -->
+
+<h1>Listing Salons</h1>
+
+<a href="/salons/new"> New Salon </a>
+
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @salon.each do |salon| %>
+  <tr>
+    <td><%= salon.salon_name %></td>
+    <td><%= link_to 'Show', salon_path(salon) %></td>
+    <td><%= link_to 'Edit', edit_salon_path(salon) %></td>
+        <td><%= link_to 'Delete', salon_path(salon),
+                        :method => :delete, data: { confirm: 'Are you sure?'}%></td>
+
+  </tr>
+<% end %>
+</table>
+<!--
+<td><%= link_to 'Sign out ', session_path(session),:method => :delete, data: { confirm: 'Are you sure?'}%></td> -->
+

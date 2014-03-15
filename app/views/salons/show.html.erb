@@ -1,0 +1,37 @@
+<!-- Eduardo -->
+
+<h1><strong><%= @salon.salon_name %></strong></h1>
+
+
+<h2>Services</h2>
+
+ <% service = @salon.services %>
+
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% service.each do | service | %>
+  <tr>
+    <td><%= service.service_name%></td>
+   <a ref> /</a>
+ <td><a href="/salons/<%= @salon.id %>/services/<%=service.id %>"> Show</a></td>
+  </tr>
+
+<% end %>
+</table>
+
+
+
+
+<%= link_to 'Back', salon_path %>
+| <%= link_to 'Edit', edit_salon_path(@salon) %>
+
+
+
+

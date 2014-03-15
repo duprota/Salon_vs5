@@ -1,0 +1,54 @@
+<!-- Eduardo -->
+
+<!-- <h1>Sign In Here</h1> -->
+
+<!-- <form action="/sessions">
+  <label>First name:</label>
+  <input type="text" name="login">
+  <br>
+  <label>Password:</label>
+  <input type="password" name="password">
+  <br>
+  <input type="submit">
+</form> -->
+
+<!--  <%= form_for :session, url: sessions_path do |f| %>
+
+<p>
+    <%= f.label :Login %><br>
+    <%= f.text_field :login %>
+</p>
+
+<p>
+    <%= f.label :Password %><br>
+    <%= f.text_field :password %>
+</p>
+ -->
+
+<!--   <p>
+ <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+  </p> -->
+
+<% provide(:title, "Sign in") %>
+<h1>Sign in</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(:session, url: sessions_path) do |f| %>
+
+      <%= f.label :login %>
+      <%= f.text_field :login %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+
+      <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+    <% end %>
+
+    <p>New user? <%= link_to "Sign up now!", users_path %></p>
+<% end %>
+
+
+  </div>
+</div>

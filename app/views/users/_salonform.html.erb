@@ -1,0 +1,83 @@
+<!-- Eduardo -->
+
+<%= form_for @salon do |f| %>
+  <% if @salon.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@salon.errors.count, "error") %> prohibited
+      this salon from being saved:</h2>
+    <ul>
+    <% @salon.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <h1>My Profile</h1>
+
+
+<h3> Login: <%= @user.login %> </h3>
+<h3> Profile: <%= @user.profile %> </h3>
+  <p>
+    <%= f.label :"Salon name" %><br>
+    <%= f.text_field :salon_name %>
+    </p>
+
+<p>
+    <%= f.label :"Owner name" %><br>
+    <%= f.text_field :owner_name %>
+</p>
+
+  <p>
+    <%= f.label :"Contact name" %><br>
+    <%= f.text_field :contact_name %>
+</p>
+
+  <p>
+    <%= f.label :"Phone" %><br>
+    <%= f.number_field :phone %>
+</p>
+
+  <p>
+    <%= f.label :"Address" %><br>
+    <%= f.text_area :address %>
+</p>
+
+  <p>
+    <%= f.label :"email" %><br>
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
+<h3> Login: <%= @user.login %> </h3>
+
+
+<% salon = @user.salon %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% salon.each do |salon| %>
+  <tr>
+    <td><%= salon.salon_name %></td>
+    <td><%= link_to 'Show', salon_path(salon) %></td>
+    <td><%= link_to 'Edit', edit_salon_path(salon) %></td>
+        <td><%= link_to 'Delete', salon_path(salon),
+                        :method => :delete, data: { confirm: 'Are you sure?'}%></td>
+
+  </tr>
+<% end %>
+</table>
+
+
+<a href="/salons/new"> New Salon </a>

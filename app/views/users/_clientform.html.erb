@@ -1,0 +1,55 @@
+<!-- Eduardo -->
+
+<div class="page-header">
+  <h1>Sign Up for using this website</h1>
+</div>
+<!--
+<%= form_for @client, :url => {:action => "update", :id => @client} do |f| %>
+  <%# if @profile.errors.any? %>
+  <div id="error_explanation">
+    <h2><%#= pluralize(@profile.errors.count, "error") %> prohibited
+      this client from being saved:</h2>
+    <ul>
+    <%# @profile.errors.full_messages.each do |msg| %>
+      <li><%#= msg %></li>
+    <%# end %>
+    </ul>
+  </div>
+  <%# end %> -->
+
+  <p>
+    <%= f.label :"User ID" %><br>
+    <%= session[:login] %>
+    </p>
+  <p>
+    <%= f.label :"First name" %><br>
+    <%= f.text_field :first_name %>
+    </p>
+
+<p>
+    <%= f.label :"Last name" %><br>
+    <%= f.text_field :last_name %>
+</p>
+
+  <p>
+    <%= f.label :"Date of Birth" %><br>
+    <%= f.text_field :date_of_birth %>
+</p>
+
+  <p>
+    <%= f.label :"Gender" %><br>
+    <%= f.text_area :sex %>
+  </p>
+
+  <p>
+    <%= f.label :"Image URL" %><br>
+    <%= f.number_field :image_url %>
+  </p>
+  <p>
+    <%= f.label :"email" %><br>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.submit :"update" %>
+  </p>
+<% end %>

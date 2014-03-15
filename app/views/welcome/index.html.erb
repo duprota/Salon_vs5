@@ -1,0 +1,23 @@
+<h1>Beauty Now </h1>
+
+
+
+<% user = User.find_by(:id => session[:login]) %>
+    <% if user.present? %>
+      <% if user.profile == "client" %>
+        <p><a href="/clients"> New Clients </a></p>
+      <% else %>
+        <p><a href="/salons/new"> New Salon </a></p>
+      <% end %>
+
+    <% else %>
+        <p>outro</p>
+    <% end %>
+
+
+
+
+
+
+
+
