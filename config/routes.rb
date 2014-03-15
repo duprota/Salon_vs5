@@ -16,7 +16,7 @@ resources :sessions, only: [:new, :create, :destroy]
 # get "/clients/show" => 'clients#show'
 
 resources :clients
-
+resources :appointments
 
 root 'welcome#index'
 

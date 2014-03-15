@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-
+#Vijay
 
 def show
   #@client_show = Client.find_by(:id => )
@@ -30,7 +30,8 @@ end
   end
 
   def index
-   end
+    @user = User.find_by(:id => session[:login])
+  end
 
 
 
