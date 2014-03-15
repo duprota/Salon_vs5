@@ -2,18 +2,28 @@
 
 <h1>My Salons</h1>
 
+<% salon = @user.salon %>
 
-<h3> Login: <%#= @user.login %> </h3>
-<h3> Profile: <%#= @user.profile %> </h3>
-  <p>
-    <%#= f.label :"Salon name" %><br>
-    <%#= f.text_field :salon_name %>
-    </p>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+    <th></th>
+  </tr>
 
-<%# if @user.profile = "Client" %>
-<%#= render 'clientform' %>
-<%# elsif @user.profile == "Salon" %>
-<%# render 'salonform' %>
-<%# end %>
+<% salon.each do |salon| %>
+  <tr>
+    <td><%= salon.salon_name %></td>
+    <td><%= link_to 'Show', salon_path(salon) %></td>
+    <td><%= link_to 'Edit', edit_salon_path(salon) %></td>
+        <td><%= link_to 'Delete', salon_path(salon),
+                        :method => :delete, data: { confirm: 'Are you sure?'}%></td>
 
+  </tr>
+<% end %>
+</table>
+
+
+<a href="/salons/new"> New Salon </a>
 
