@@ -1,0 +1,53 @@
+<!-- Vijay -->
+<div class="page-header">
+  <h1>Sign Up for using this website</h1>
+</div>
+
+<%= form_for @client do |f| %>
+  <% if @client.errors.any? %> 
+  <div id="error_explanation">
+    <h2><%= pluralize(@client.errors.count, "error") %> prohibited
+      this client from being saved:</h2>
+    <ul>
+    <% @client.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+   <p> 
+    <%= f.label :"User ID" %><br>
+    <%= session[:login] %>
+    </p>
+  <p>
+    <%= f.label :"First name" %><br>
+    <%= f.text_field :first_name%>
+    </p>
+
+<p>
+    <%= f.label :"Last name" %><br>
+    <%= f.text_field :last_name %>
+</p>
+
+  <p>
+    <%= f.label :"Date of Birth" %><br>
+    <%= f.text_field :date_of_birth %>
+</p>
+
+  <p>
+    <%= f.label :"Gender" %><br>
+    <%= f.select :sex, [['Male','male'],['Female','female']] %>
+  </p>
+
+  <p>
+    <%= f.label :"Image URL" %><br>
+    <%= f.text_field :image_url %>
+  </p>
+  <p>
+    <%= f.label :"email" %><br>
+    <%= f.email_field :email %>
+  </p>
+  <p>
+    <%= f.submit :"update" %>
+  </p>
+<% end %>
