@@ -7,10 +7,11 @@ class UsersController < ApplicationController
  def create
   @user = User.new(user_params)
   @user.save
+  session[:login] = @user.id
       if @user.profile == "salon"
         redirect_to new_salon_path notice: "Please tell us more about your salon"
       else
-        redirect_to root_url, notice: "Welcome dear client"
+        redirect_to new_client_path, notice: "Welcome dear client"
       end
   end
 
