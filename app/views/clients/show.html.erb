@@ -1,8 +1,4 @@
-
-
-
+<!-- Vijay -->
 <h1><strong> Hello <%= @client.first_name %> <%= @client.last_name %> </strong></h1>
-
 <h2>Your profile has been updated. You can now go ahead and book appointments.</h2>
-
-<a href="/"> <button type="submit" class="btn btn-success btn-md">Click here to Book Appointment</button> </a>
+<button type="submit" class="btn btn-success btn-md"><%= link_to "Click here to book appointments", new_appointment_path(@appointment) %> </button> </a>

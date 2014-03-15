@@ -1,3 +1,4 @@
+<!-- Vijay -->
 <div class="page-header">
   <h1>Sign Up for using this website</h1>
 </div>
@@ -35,16 +36,16 @@
 
   <p>
     <%= f.label :"Gender" %><br>
-    <%= f.text_area :sex %>
+    <%= f.select :sex, [['Male','male'],['Female','female']] %>
   </p>
 
   <p>
     <%= f.label :"Image URL" %><br>
-    <%= f.number_field :image_url %>
+    <%= f.text_field :image_url %>
   </p>
   <p>
     <%= f.label :"email" %><br>
-    <%= f.text_field :email %>
+    <%= f.email_field :email %>
   </p>
   <p>
     <%= f.submit :"update" %>

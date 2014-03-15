@@ -1,8 +1,7 @@
-
-<h1>Listing Clients</h1>
-
-<a href="/clients/new"> Create New Client </a>
-
+<!-- vijay -->
+<h1>Welcome <%= @user.login %> </h1>
+<a href="/clients/new"> Complete your profile information. </a>
+<%= link_to "Update Your Profile", new_client_path(@client) %>
 
 <!-- <table>
   <tr>
