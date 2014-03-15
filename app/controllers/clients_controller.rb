@@ -31,6 +31,7 @@ end
 
   def index
     @user = User.find_by(:id => session[:login])
+    @client = Client.find_by(:id => @user.id)
   end
 
 
