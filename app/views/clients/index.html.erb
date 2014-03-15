@@ -1,10 +1,10 @@
 <!-- vijay -->
 <h1>Welcome <%= @user.login %> </h1>
-<% if @client = [] %>
-<a href="/clients/new"> Complete your profile information. </a>
-<%= link_to "Update Your Profile", new_client_path(@client) %>
-<% else %>
+<!-- <a href="/clients/new"> Complete your profile information. </a> -->
+<% if @client.user_id.present? %>
 <%= link_to "Update Your Profile", edit_client_path(@client) %>
+<% else %>
+<%= link_to "create Your Profile", new_client_path(@client) %>
 <% end %>
 
 <!-- <table>
