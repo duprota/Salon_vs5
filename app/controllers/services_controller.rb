@@ -2,6 +2,7 @@ class ServicesController < ApplicationController
 
 def show
   @service = Service.find(params[:id])
+  @salon = Salon.find(params[:salon_id])
 end
 
 # def new
