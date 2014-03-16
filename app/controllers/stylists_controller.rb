@@ -1,20 +1,24 @@
 class StylistsController < ApplicationController
 
+  # before_filter :load_salon
 
 def index
-	@stylist = Stylist.all
-	@salon = Salon.find_by(params[:salon_id])
+	@stylists = @Stylist.all
+	#@stylist = @Salon.find_by(params[:salon_id])
 end
 
 def new
-	@salon = Salon.find_by(:id => params[:salon_id])
+  #@stylist = @Stylist.new
+  @salon = Salon.find_by(:user_id => session[:login])
 end
 
 def create
-	@stylist = Stylist.new(stylist_params)
+	  @stylist = @Stylist.new(stylist_params) 
     @stylist.user_id = session[:login]
-    @stylist.save
-    redirect_to @stylist
+    @salon = Salon.find_by(:id => 'user_id')
+    if @stylist.save
+      redirect_to @salon_stylists, @salon
+    end 
 end
 
 def edit
@@ -27,7 +31,7 @@ end
 
 def update
 	@stylist = Stylist.find(params[:id])
-   if @stylist.update(params[:stylist].permit(:first_name, :last_name, :user_id, :sex, :phone, :email, :date_of_birth))
+   if @stylist.update(params[:stylist].permit(:first_name, :last_name, :user_id, :sex, :phone, :email, :date_of_birth, :image_url))
      redirect_to @stylist
    else
      render 'edit'
@@ -42,8 +46,12 @@ end
 
 private
   def stylist_params
-     params.require(:stylist).permit(:first_name, :last_name, :user_id, :sex, :phone, :email, :date_of_birth)
+     params.require(:stylist).permit(:first_name, :last_name, :user_id, :sex, :phone, :email, :date_of_birth, :image_url)
   end
+
+# private
+# def load_salon
+#   @salon = Salon.find(params[:salon_id])
+# end
+
 end
-
-

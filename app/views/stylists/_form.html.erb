@@ -1,4 +1,4 @@
-<%= form_for @salon_stylists do |f| %>
+<%= form_for [@salon, @stylist] do |f| %>
   <% if @stylist.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@stylist.errors.count, "error") %> prohibited
@@ -27,24 +27,28 @@
 
   <p>
     <%= f.label :"Date of Birth" %><br>
-    <%= f.text_field :date_of_birth %>
+    <%= f.date_field :date_of_birth %>
 </p>
 
   <p>
     <%= f.label :"Gender" %><br>
-    <%= f.text_area :sex %>
+    <%= select(:stylist, :sex, [['Male', "male"], ['Female', "female"]]) %>
+    <%#= f.text_field :sex %>
   </p>
 
   <p>
     <%= f.label :"Image URL" %><br>
-    <%= f.number_field :image_url %>
+    <%= f.text_field :image_url %>
   </p>
   <p>
     <%= f.label :"email" %><br>
-    <%= f.text_field :email %>
+    <%= f.email_field :email %>
+  </p>
+  <p>
+    <%= f.label :"Phone" %><br>
+    <%= f.text_field :phone %>
   </p>
   <p>
     <%= f.submit :"update" %>
   </p>
 <% end %>
-
