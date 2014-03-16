@@ -3,7 +3,7 @@
   <h1>Sign Up for using this website</h1>
 </div>
 
-<%= form_for @client do |f| %>
+<%= form_for @client, :url => {:action => "update", :id => @client} do |f| %>
   <% if @client.errors.any? %> 
   <div id="error_explanation">
     <h2><%= pluralize(@client.errors.count, "error") %> prohibited

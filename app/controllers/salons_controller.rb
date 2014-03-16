@@ -24,6 +24,7 @@ end
 
 def show
   @salon=Salon.find(params[:id])
+  @stylist=Stylist.where(:id => @salon.id)
 end
 
 def edit

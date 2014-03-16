@@ -26,13 +26,30 @@
 <% end %>
 </table>
 
+<h2> List of Stylists </h2>
 
+<<<<<<< HEAD
+<% @stylist.each do | stylist | %>
+  <tr>
+    <td><%= stylist.first_name%> <%= stylist.last_name%></td>
+   <a ref> /</a>
+ <td><a href="/salons/<%= @salon.id %>/services/<%=stylist.id %>"> Show</a></td>
+  </tr>
+<% end %>
+</table>
+<p>
+<%= link_to "Add New Stylist", new_salon_stylist_path(@salon) %>
+</p>
+<%= link_to 'Back', salon_path(@salon) %>
+| <%= link_to 'Edit', edit_salon_path(@salon) %>
+=======
 <%= link_to 'New service', new_salon_service_path(@salon) %>
 
 <li>
 <%= link_to 'Back', salon_path %>
 </li>
 
+>>>>>>> upstream/master
 
 
 
