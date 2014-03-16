@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140315235156) do
+ActiveRecord::Schema.define(version: 20140316052208) do
 
   create_table "appointments", force: true do |t|
     t.integer  "salon_id"
@@ -71,10 +71,11 @@ ActiveRecord::Schema.define(version: 20140315235156) do
     t.string   "service_description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "price"
   end
 
   create_table "stylists", force: true do |t|
-    t.integer  "user_id"
+    t.integer  "salon_id"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "sex"

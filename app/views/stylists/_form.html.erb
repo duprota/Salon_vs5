@@ -1,15 +1,15 @@
 <%= form_for [@salon, @stylist] do |f| %>
-  <% if @stylist.errors.any? %>
+  <<!-- %# if @stylist.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@stylist.errors.count, "error") %> prohibited
+    <h2><%#= pluralize(@stylist.errors.count, "error") %> prohibited
       this salon from being saved:</h2>
     <ul>
-    <% @stylist.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
+    <%# @stylist.errors.full_messages.each do |msg| %>
+      <li><%#= msg %></li>
+    <%# end %>
     </ul>
   </div>
-  <% end %>
+  <%# end %> -->
   <h1> Create / Edit Stylist Information </h1>
   <p> 
     <%= f.label :"User ID" %><br>
